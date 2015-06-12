@@ -1,0 +1,133 @@
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+	background-color: #13afdf;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+.admin-bar .site-header {
+	top: 32px;
+}
+
+.site-header .wrap {
+	min-height: 160px;
+}
+
+.bumper {
+	min-height: 160px;
+}
+
+.site-header .wrap {
+	padding: 40px;
+	max-width: 100%;
+}
+
+.site-header,
+.site-header .wrap,
+.site-description {
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition:    all 0.4s ease-in-out;
+	transition:         all 0.4s ease-in-out;
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+	float: left;
+	padding: 0;
+	width: 360px;
+}
+
+.header-full-width .title-area {
+	width: 100%;
+}
+
+.site-title {
+	font-family: 'Spinnaker', sans-serif;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.site-header .site-title a,
+.site-header .site-title a:hover {
+	color: #fff;
+	letter-spacing: 2px;
+	text-shadow: 3px 3px rgba( 0, 0, 0, 0.1 );
+	text-transform: uppercase;
+}
+
+.header-image .site-title > a {
+	float: left;
+	min-height: 80px;
+	width: 100%;
+}
+
+.site-description {
+    height: 0;
+    text-indent: -9999px;
+}
+
+.site-description,
+.site-title {
+	margin-bottom: 0;
+}
+
+.header-image .site-description,
+.header-image .site-title {
+	display: block;
+	text-indent: -9999px;
+}
+
+/* Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area {
+	color: #fff;
+	float: right;
+	text-align: right;
+	padding-top: 10px;
+	width: 540px;
+}
+
+.site-header .widget-area a,
+.site-header .widget-area a:hover {
+	color: #fff;
+}
+
+/* Shrink
+--------------------------------------------- */
+
+.site-header.shrink .wrap {
+	background-color: rgba(255, 255, 255, 0.1);
+	min-height: 60px;
+	padding: 0 40px;
+}
+
+.shrink .site-title {
+	font-size: 36px;
+	padding-top: 10px;
+}
+
+.header-image .shrink .site-title {
+	padding: 0;
+}
+
+.header-image .shrink .site-title > a {
+	min-height: 60px;
+}
+
+.shrink .site-title a {
+	background-size: 270px 60px !important;
+}
+
+.site-header.shrink .widget-area {
+	padding-top: 0;
+}

@@ -22,13 +22,18 @@ add_theme_support( 'genesis-responsive-viewport' );
 //* Enqueue Scripts
 add_action( 'wp_enqueue_scripts', 'centric_load_scripts' );
 function centric_load_scripts() {
+	//* Remove default style.css, add /lib/main.css
+	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
+	wp_deregister_style( $handle );
+	if( file_exists( get_stylesheet_directory() . '/lib/css/main.css' ) )
+		wp_enqueue_style( $handle, get_bloginfo( 'stylesheet_directory' ) . '/lib/css/main.css', false, filemtime( get_stylesheet_directory() . '/lib/css/main.css' ) );
 
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Lato:300,700|Spinnaker', array(), CHILD_THEME_VERSION );
-	
+
 	wp_enqueue_style( 'dashicons' );
-	
+
 	wp_enqueue_script( 'centric-global', get_bloginfo( 'stylesheet_directory' ) . '/js/global.js', array( 'jquery' ), '1.0.0', true );
-	
+
 }
 
 //* Add new image sizes
@@ -114,7 +119,7 @@ function remove_more_link_scroll( $link ) {
 
 	$link = preg_replace( '|#more-[0-9]+|', '', $link );
 	return $link;
-	
+
 }
 
 //* Modify the size of the Gravatar in author box
@@ -122,7 +127,7 @@ add_filter( 'genesis_author_box_gravatar_size', 'centric_author_box_gravatar_siz
 function centric_author_box_gravatar_size( $size ) {
 
 	return 96;
-	
+
 }
 
 //* Modify the size of the Gravatar in comments
@@ -131,13 +136,13 @@ function centric_comment_list_args( $args ) {
 
     $args['avatar_size'] = 60;
 	return $args;
-	
+
 }
 
 //* Remove comment form allowed tags
 add_filter( 'comment_form_defaults', 'centric_remove_comment_form_allowed_tags' );
 function centric_remove_comment_form_allowed_tags( $defaults ) {
-	
+
 	$defaults['comment_notes_after'] = '';
 	return $defaults;
 

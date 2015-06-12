@@ -37,6 +37,28 @@ Media Queries
 
 }
 
+@media only screen and (min-width: 1360px){
+	.home-widgets-2{
+		.featuredpage:nth-child(-n+3){
+			display: inline-block;
+			width: 33%;
+
+			.widget-wrap{
+				padding: 60px;
+			}
+		}
+		.featuredpage:nth-child(6),
+		.featuredpage:nth-child(7){
+			display: inline-block;
+			width: 49.8%;
+
+			.widget-wrap{
+				padding: 60px;
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 1220px) {
 
 	.home-widgets .featuredpage .widget-wrap,

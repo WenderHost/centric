@@ -121,6 +121,23 @@ function centric_shrink_header( $attributes ){
 	return $attributes;
 }
 
+//* Use page's featured image as the header background
+add_action( 'wp_head', 'centric_set_featured_background', 99);
+function centric_set_featured_background() {
+	if( is_front_page() )
+		return;
+
+	$image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), full, false );
+	if ( $image_url[0] ) {
+?>
+<style type="text/css" id="featured-image-custom-background-css">
+body.custom-background{background-image: url('<?php echo $image_url[0] ?>');}
+</style>
+<?php
+	}
+}
+
+
 //* Prevent Page Scroll When Clicking the More Link
 add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
 function remove_more_link_scroll( $link ) {

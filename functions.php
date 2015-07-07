@@ -113,6 +113,14 @@ function centric_close_post_title() {
 	echo '</div></div>';
 }
 
+//* Compress/.shrink the main nav everywhere except is_front_page()
+add_filter('genesis_attr_site-header', 'centric_shrink_header' );
+function centric_shrink_header( $attributes ){
+	if( ! is_front_page() )
+		$attributes['class'].= ' shrink';
+	return $attributes;
+}
+
 //* Prevent Page Scroll When Clicking the More Link
 add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
 function remove_more_link_scroll( $link ) {

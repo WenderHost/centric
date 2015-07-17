@@ -52,27 +52,35 @@ Content Area
 	color: @alttextcolor;
 }
 
-.home-featured .wrap {
-	margin-top: -160px;
-	max-width: 782px;
-	display: table;
-	text-align: center;
-}
+.home-featured{
+	.wrap{
+		margin-top: -160px;
+		max-width: 940px; /* 782px */
+		display: table;
+		text-align: center;
+	}
 
-.home-featured .home-widgets-1 {
-	display: inline-block;
-	display: table-cell;
-	vertical-align: middle;
-	width: 100%;
-	padding: 200px 0;
-	font-size: 20px;
-}
+	.home-widgets-1 {
+		display: inline-block;
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+		padding: 200px 0;
+		font-size: 20px;
 
-.home-widgets-1 h1 {
-	font-size: 60px;
-	font-weight: 700;
-	line-height: 1;
-	text-shadow: 3px 3px rgba( 0, 0, 0, 0.1 );
+		h1 {
+			font-size: 60px;
+			font-weight: 700;
+			line-height: 1;
+			text-shadow: 3px 3px rgba( 0, 0, 0, 0.1 );
+		}
+
+		section.widget{
+			background-color: rgba(0,0,0,0.8);
+			padding: 40px 40px 1px 40px;
+			border-radius: 5px;
+		}
+	}
 }
 
 .arrow {
@@ -82,7 +90,7 @@ Content Area
 }
 
 .arrow a {
-	background: #fff;
+	background: #fff; /* #fff */
 	border-radius: 30px;
 	display: inline-block;
 	padding: 13px 10px 6px;
@@ -92,7 +100,7 @@ Content Area
 
 .arrow a:before {
 	-webkit-font-smoothing: antialiased;
-	color: #000;
+	color: #000; /* #000 */
 	content: "\f347";
 	font: normal 40px/1 'dashicons';
 	height: 40px;

@@ -11,6 +11,7 @@ jQuery(function( $ ){
     	duration: 750
     });
 
+    /*
     $(window).scroll(function () {
       if ($(document).scrollTop() > 1 ) {
         $('.site-header').addClass('shrink');
@@ -18,5 +19,6 @@ jQuery(function( $ ){
         $('.site-header').removeClass('shrink');
       }
     });
+    /**/
 
 });

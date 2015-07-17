@@ -116,7 +116,7 @@ function centric_close_post_title() {
 //* Compress/.shrink the main nav everywhere except is_front_page()
 add_filter('genesis_attr_site-header', 'centric_shrink_header' );
 function centric_shrink_header( $attributes ){
-	if( ! is_front_page() )
+	//if( ! is_front_page() )
 		$attributes['class'].= ' shrink';
 	return $attributes;
 }

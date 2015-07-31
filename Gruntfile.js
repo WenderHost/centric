@@ -33,14 +33,44 @@ module.exports = function(grunt) {
         options: {
           nospawn: true
         }
+      },
+      webfont: {
+        files: ['lib/build/svg-icons/*.svg'],
+        tasks: ['webfont']
+      }
+    },
+    webfont: {
+      icons: {
+        src: 'lib/build/svg-icons/*.svg',
+        dest: 'lib/fonts',
+        destCss: 'lib/less',
+        options: {
+          font: '_00_kmi-font',
+          fontHeight: 300,
+          relativeFontPath: '../fonts',
+          htmlDemo: true,
+          destHtml: 'lib/build/fonts',
+          engine: 'node',
+          hashes: true,
+          embed: true,
+          stylesheet: 'less',
+          templateOptions: {
+            baseClass: 'kmi-icon',
+            classPrefix: 'kmi-icon-',
+            mixinPrefix: 'kmi_icon_'
+          }
+        },
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-webfont');
 
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('build', ['less:production']);
   grunt.registerTask('builddev', ['less:development']);
+  grunt.registerTask('buildfont', ['webfont','less:production']);
+  grunt.registerTask('buildfontdev', ['webfont','less:development']);
 };

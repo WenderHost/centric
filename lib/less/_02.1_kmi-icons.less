@@ -1,0 +1,24 @@
+.kmi-icon{
+	color: @primarycolor;
+
+	&.circle{
+		color: #fff;
+		background-color: @primarycolor;
+		padding: 24px;
+		border-radius: 50%;
+		font-size: 72px;
+
+		.home-widgets-1 &{
+			color: #fff;
+			background-color: rgba(red(@primarycolor),green(@primarycolor),blue(@primarycolor),0.7);
+			border: 5px solid #fff;
+			margin-bottom: 20px;
+
+			&:hover{
+				color: @primarycolor;
+				background-color: #fff;
+				border-color: @primarycolor;
+			}
+		}
+	}
+}

@@ -46,7 +46,7 @@ module.exports = function(grunt) {
         destCss: 'lib/less',
         options: {
           font: '_00_kmi-font',
-          fontHeight: 300,
+          fontHeight: 1024,
           relativeFontPath: '../fonts',
           htmlDemo: true,
           destHtml: 'lib/build/fonts',

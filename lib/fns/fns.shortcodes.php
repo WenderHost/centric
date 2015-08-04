@@ -15,6 +15,9 @@ function html_include( $atts ){
 	$file = dirname( __FILE__ ) . '/../html/' . $html . '.html';
 	if( file_exists( $file ) ){
 		$html = file_get_contents( $file );
+		$search = array( '{stylesheetdir}' );
+		$replace = array( get_stylesheet_directory_uri() );
+		$html = str_replace( $search, $replace, $html );
 	} else {
 		$html = '<p><strong>ERROR:</strong> I could not locate <code>' . basename( $file ) . '</code>.</p>';
 	}

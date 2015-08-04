@@ -5,6 +5,9 @@ include_once( get_template_directory() . '/lib/init.php' );
 //* Setup Theme
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
+//* Include functions
+include_once( get_stylesheet_directory() . '/lib/fns/fns.shortcodes.php' );
+
 //* Set Localization (do not remove)
 load_child_theme_textdomain( 'centric', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'centric' ) );
 
@@ -35,6 +38,9 @@ function centric_load_scripts() {
 	wp_enqueue_script( 'centric-global', get_bloginfo( 'stylesheet_directory' ) . '/js/global.js', array( 'jquery' ), '1.0.0', true );
 
 }
+
+//* Process shortcodes in Text widgets
+add_filter( 'widget_text', 'do_shortcode' );
 
 //* Add new image sizes
 add_image_size( 'featured-page', 960, 700, TRUE );

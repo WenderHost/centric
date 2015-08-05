@@ -428,6 +428,53 @@ p.entry-meta {
 	background-color: @primarycolor;
 }
 
+/* Callouts
+--------------------------------------------- */
+.callout{
+	padding: 20px 0;
+	margin-bottom: 40px;
+	border-radius: 10px;
+	border: 3px solid #fff;
+	.clearfix;
+
+	.home-widgets-1 &{
+		background-color: rgba(red(@primarycolor),green(@primarycolor),blue(@primarycolor),0.7);
+	}
+
+	.two-thirds{
+		text-align: left;
+		vertical-align: middle;
+		margin-left: 0;
+	}
+	.one-third,
+	.two-thirds{
+		display: inline-block;
+		float: none;
+	}
+
+	.message{
+		width: 65%;
+		float: right;
+		text-align: left;
+	}
+
+	/* Colors
+	-----------------*/
+	&.green{
+		background-color: rgba(red(@green),green(@green),blue(@green),0.5);
+		color: #fff;
+
+		.button{
+			color: darken(@green,10%);
+
+			&:hover{
+				background-color: darken(@green,5%);
+			}
+		}
+	}
+}
+
+
 /* Comments
 --------------------------------------------- */
 

@@ -89,6 +89,7 @@ unregister_sidebar( 'sidebar-alt' );
 //* Reposition Page Title
 add_action( 'genesis_before', 'centric_post_title' );
 function centric_post_title() {
+	global $wp_query;
 
 	if ( is_page() and !is_page_template() ) {
 		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
@@ -105,8 +106,14 @@ function centric_post_title() {
         add_action( 'genesis_after_header', 'centric_open_post_title', 1 ) ;
         add_action( 'genesis_after_header', 'genesis_do_search_title', 2 );
         add_action( 'genesis_after_header', 'centric_close_post_title', 3 );
+    } elseif ( 'tribe_events' == $wp_query->query['post_type'] ){
+		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+		add_action( 'genesis_after_header', 'centric_open_post_title', 1 );
+		add_action( 'genesis_after_header', 'genesis_do_post_title', 2 );
+		add_action( 'genesis_after_header', 'centric_close_post_title', 3 );
+	    add_filter( 'genesis_post_title_text', function(){global $post, $wp_query; return 'Calendar';}, 10 );
+	    add_filter( 'genesis_link_post_title', function(){return false;}, 10 );
     }
-
 }
 
 function centric_open_post_title() {

@@ -6,6 +6,7 @@ include_once( get_template_directory() . '/lib/init.php' );
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
 //* Include functions
+include_once( get_stylesheet_directory() . '/lib/fns/fns.custom-background.php' );
 include_once( get_stylesheet_directory() . '/lib/fns/fns.shortcodes.php' );
 
 //* Set Localization (do not remove)
@@ -45,9 +46,6 @@ add_filter( 'widget_text', 'do_shortcode' );
 //* Add new image sizes
 add_image_size( 'featured-page', 960, 700, TRUE );
 add_image_size( 'featured-post', 400, 300, TRUE );
-
-//* Add support for custom background
-add_theme_support( 'custom-background' );
 
 //* Add support for custom header
 add_theme_support( 'custom-header', array(

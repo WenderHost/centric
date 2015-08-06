@@ -4,6 +4,19 @@ Media Queries
 
 @media only screen and (max-width: 1360px) {
 
+	.site-container{
+		.bumper{
+			display: none;
+		}
+		header{
+			position: relative;
+		}
+	}
+
+	.admin-bar .site-header{
+		top: 0;
+	}
+
 	.home-widgets .featuredpage .widget-wrap,
 	.home-widgets .widget,
 	.wrap {
@@ -115,6 +128,10 @@ Media Queries
 
 @media only screen and (max-width: 1023px) {
 
+	body.custom-background{
+		background-position: center 100px!important;
+	}
+
 	.wrap {
 		max-width: 782px;
 	}
@@ -172,7 +189,7 @@ Media Queries
 	}
 
 	.page-title {
-		padding: 0 40px 40px; /* 0 40px 40px */
+		padding: 20px 40px; /* 0 40px 40px */
 	}
 
 	.home-widgets .featuredpage .entry-title,
@@ -234,12 +251,27 @@ Media Queries
 		}
 	}
 
+	.callout{
+		.one-third{
+			margin-bottom: 20px;
+
+			a.button{
+				display: block;
+				margin: 0 20px;
+			}
+		}
+		.two-thirds{
+			text-align: center;
+			padding: 0 20px;
+		}
+	}
+
 	.site-header .wrap {
 		min-height: 100px;
 	}
 
 	.admin-bar .site-header {
-		top: 46px;
+		/*top: 46px;*/
 		z-index: 499;
 	}
 
@@ -330,6 +362,10 @@ Media Queries
 	.page-title .entry-title,
 	.home-featured .home-widgets-1 h1 {
 		font-size: 30px;
+	}
+
+	.home-featured{
+		margin-top: 70px;
 	}
 
 	.home-featured .entry-content > p:last-child,

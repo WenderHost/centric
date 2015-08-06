@@ -147,11 +147,17 @@ body.custom-background{
 	background-repeat: repeat-x;
 	background-position: center 60px;
 }
+.page-title{
+	padding-bottom: 10px;
+}
 .page-title div.wrap{
 	display: inline-block;
 	padding: 0 16px 0;
 	background-color: rgba(0,0,0,0.6);
 	border-radius: 5px;
+}
+.page-title div.wrap h1{
+	line-height: 1.1;
 }
 </style>
 <?php

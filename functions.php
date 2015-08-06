@@ -135,7 +135,7 @@ function centric_shrink_header( $attributes ){
 //* Use page's featured image as the header background
 add_action( 'wp_head', 'centric_set_featured_background', 99);
 function centric_set_featured_background() {
-	if( is_front_page() )
+	if( is_front_page() || is_page( 'Curriculum' ) )
 		return;
 
 	$image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), full, false );

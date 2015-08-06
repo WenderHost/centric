@@ -142,7 +142,17 @@ function centric_set_featured_background() {
 	if ( $image_url[0] ) {
 ?>
 <style type="text/css" id="featured-image-custom-background-css">
-body.custom-background{background-image: url('<?php echo $image_url[0] ?>');}
+body.custom-background{
+	background-image: url('<?php echo $image_url[0] ?>');
+	background-repeat: repeat-x;
+	background-position: center 60px;
+}
+.page-title div.wrap{
+	display: inline-block;
+	padding: 0 16px 0;
+	background-color: rgba(0,0,0,0.6);
+	border-radius: 5px;
+}
 </style>
 <?php
 	}

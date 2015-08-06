@@ -172,7 +172,7 @@ Media Queries
 	}
 
 	.page-title {
-		padding: 0 40px 40px;
+		padding: 0 40px 40px; /* 0 40px 40px */
 	}
 
 	.home-widgets .featuredpage .entry-title,
@@ -221,7 +221,17 @@ Media Queries
 	}
 
 	body.custom-background{
-		background-size: cover;
+		/*background-size: cover;*/
+		background-image: none!important;
+	}
+
+	.page-title{
+		div.wrap{
+			display: block!important;
+			background: none!important;
+			padding: 0!important;
+			border-radius: none!important;
+		}
 	}
 
 	.site-header .wrap {

@@ -11,6 +11,14 @@ jQuery(function( $ ){
     	duration: 750
     });
 
+    // Set #relationships p.entry-content to same height
+    var heights = $('#relationships p.entry-content').map(function(){
+        return $(this).height();
+    }).get();
+
+    maxHeight = Math.max.apply(null, heights);
+    $('#relationships p.entry-content').css('height', maxHeight);
+
     /*
     $(window).scroll(function () {
       if ($(document).scrollTop() > 1 ) {

@@ -159,12 +159,14 @@ body.custom-background{
 }
 .page-title div.wrap{
 	display: inline-block;
-	padding: 0 16px 0;
+	padding: 0 16px 10px;
 	background-color: rgba(0,0,0,0.6);
 	border-radius: 5px;
+	margin: -6px 0 12px 0;
 }
 .page-title div.wrap h1{
-	line-height: 1.1;
+	line-height: 1;
+	margin: 4px 0 0 0;
 }
 </style>
 <?php

@@ -12,13 +12,22 @@ jQuery(function( $ ){
     });
 
     // Set #relationships p.entry-content to same height
-    var heights = $('#relationships p.entry-content').map(function(){
-        return $(this).height();
-    }).get();
+    function equalHeights(){
+        $('#relationships p.entry-content').css('height','auto');
 
-    maxHeight = Math.max.apply(null, heights);
-    $('#relationships p.entry-content').css('height', maxHeight);
+        var heights = $('#relationships p.entry-content').map(function(){
+            return $(this).height();
+        }).get();
 
+        maxHeight = Math.max.apply(null, heights);
+        $('#relationships p.entry-content').css('height', maxHeight);
+    }
+    equalHeights();
+
+    // Adjust #relationships p.entry-content heights on resize
+    $(window).resize(function(){
+        equalHeights();
+    });
     /*
     $(window).scroll(function () {
       if ($(document).scrollTop() > 1 ) {

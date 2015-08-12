@@ -83,6 +83,13 @@ genesis_unregister_layout( 'sidebar-sidebar-content' );
 //* Unregister secondary navigation menu
 add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'centric' ) ) );
 
+//* Only show Primary nav on relationships pages
+add_filter( 'genesis_do_nav', 'kmi_relationships_menu_filter' );
+function kmi_relationships_menu_filter( $nav_output, $nav = '', $args = array() ){
+	if( is_page( 'Singles' ) || is_page( 'Preparing' ) || is_page( 'Maximize' ) || is_page( 'Repairing' ) )
+		return $nav_output;
+}
+
 //* Unregister secondary sidebar
 unregister_sidebar( 'sidebar-alt' );
 

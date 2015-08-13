@@ -556,3 +556,23 @@ li.comment {
 	font-size: 16px;
 	padding: 24px;
 }
+
+/* Alerts
+--------------------------------------------- */
+.alert{
+	border: 1px solid #999;
+	background-color: #eee;
+	padding: 40px 40px 20px 40px;
+	margin-bottom: 40px;
+	border-radius: 5px;
+
+	&.success{
+		border-color: @green;
+		background-color: lighten(@green,45%);
+	}
+
+	&.info{
+		border-color: @primarycolor;
+		background-color: lighten(@primarycolor,45%);
+	}
+}

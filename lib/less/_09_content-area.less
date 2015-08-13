@@ -566,13 +566,28 @@ li.comment {
 	margin-bottom: 40px;
 	border-radius: 5px;
 
-	&.success{
-		border-color: @green;
-		background-color: lighten(@green,45%);
+	& p:first-child{
+		margin: -16px 0 0 0;
+	}
+
+	&.error{
+		border-color: @red;
+		background-color: lighten(@red,35%);
 	}
 
 	&.info{
 		border-color: @primarycolor;
 		background-color: lighten(@primarycolor,45%);
 	}
+
+	&.success{
+		border-color: @green;
+		background-color: lighten(@green,45%);
+	}
+
+	&.warning{
+		border-color: @yellow;
+		background-color: lighten(@yellow,15%);
+	}
+
 }

@@ -7,6 +7,7 @@ include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
 //* Include functions
 include_once( get_stylesheet_directory() . '/lib/fns/fns.custom-background.php' );
+include_once( get_stylesheet_directory() . '/lib/fns/fns.gravityforms.php' );
 include_once( get_stylesheet_directory() . '/lib/fns/fns.shortcodes.php' );
 
 //* Set Localization (do not remove)

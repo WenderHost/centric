@@ -5,7 +5,13 @@ module.exports = function(grunt) {
         options: {
           compress: false,
           yuicompress: false,
-          optimization: 2
+          optimization: 2,
+          relativeUrls: true,
+          sourceMap: true,
+          sourceMapFilename: 'lib/css/main.css.map',
+          sourceMapBasepath: 'lib/less',
+          sourceMapURL: 'main.css.map',
+          sourceMapRootpath: '../../lib/less'
         },
         files: {
           // target.css file: source.less file

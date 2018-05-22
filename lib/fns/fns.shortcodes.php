@@ -1,4 +1,6 @@
 <?php
+namespace CentricPro\shortcodes;
+
 /**
  * Returns a HTML for a callout
  *
@@ -7,9 +9,8 @@
  * @param array $args
  * @return string Callout html.
  */
-add_shortcode( 'callout', 'centric_html_callout' );
-function centric_html_callout( $atts ){
-	extract( shortcode_atts( array(
+function html_callout( $atts ){
+	extract( \shortcode_atts( array(
 		'link' => '#',
 		'linktext' => 'Click Here',
 		'message' => 'Your message goes here.',
@@ -20,6 +21,7 @@ function centric_html_callout( $atts ){
 
 	return sprintf( $format, $link, $linktext, $message, ' ' . $cssclass );
 }
+\add_shortcode( 'callout', __NAMESPACE__ . '\\html_callout' );
 
 /**
  * Returns HTML stored in lib/html/
@@ -28,15 +30,14 @@ function centric_html_callout( $atts ){
  *
  * @return string Specify the HTML to retrieve.
  */
-add_shortcode( 'htmlinc', 'html_include' );
 function html_include( $atts ){
-	extract( shortcode_atts( array(
+	extract( \shortcode_atts( array(
 		'html' => 'relationships',
 	), $atts ) );
 
 	$file = dirname( __FILE__ ) . '/../html/' . $html . '.html';
 	if( file_exists( $file ) ){
-		$html = do_shortcode( file_get_contents( $file ) );
+		$html = \do_shortcode( file_get_contents( $file ) );
 		$search = array( '{stylesheetdir}' );
 		$replace = array( get_stylesheet_directory_uri() );
 		$html = str_replace( $search, $replace, $html );
@@ -46,5 +47,16 @@ function html_include( $atts ){
 
 	return $html;
 }
+\add_shortcode( 'htmlinc', __NAMESPACE__ . '\\html_include' );
+
+/**
+ * Replaces [stylesheetdir] with the value of get_stylesheet_directory_uri.
+ *
+ * @return     string  The stylesheet directory URI
+ */
+function stylesheetdir(){
+	return \get_stylesheet_directory_uri();
+}
+\add_shortcode( 'stylesheetdir', __NAMESPACE__ . '\\stylesheetdir' );
 
 ?>
